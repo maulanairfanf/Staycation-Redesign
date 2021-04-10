@@ -26,7 +26,6 @@ export default class DetailsPage extends Component {
     ];
     return (
       <>
-        <Header {...this.props}></Header>
         <PageDetailTitle breadcrumb={breadcrumb} data={ItemDetails} />
         <FeaturedImage data={ItemDetails.imageUrls} />
         <section className="container">
@@ -44,8 +43,7 @@ export default class DetailsPage extends Component {
           </div>
         </section>
         <Categories data={ItemDetails.categories} />
-        <Testimony data={ItemDetails.testimonial} />
-        <Footer />
+        {/* <Testimony data={ItemDetails.testimonial} /> */}
       </>
     );
   }

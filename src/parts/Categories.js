@@ -5,10 +5,10 @@ import Fade from "react-reveal/Fade";
 export default function Categories({ data }) {
   return data.map((category, index1) => {
     return (
-      <section className="container" key={`category-${index1}`}>
+      <section className="container " key={`category-${index1}`}>
         <Fade bottom>
           <h4 className="mb-3 font-weight-medium">{category.name}</h4>
-          <div className="container-grid">
+          <div className="d-flex flex-row overflow-auto">
             {category.items.length === 0 ? (
               <div className="row">
                 <div className="col-auto align-items-center">
@@ -18,12 +18,12 @@ export default function Categories({ data }) {
             ) : (
               category.items.map((item, index2) => {
                 return (
-                  <div
-                    className="item column-3 row-1"
-                    key={`category-${index1}-item-${index2}`}
-                  >
+                  <div key={`category-${index1}-item-${index2}`}>
                     <Fade bottom delay={300 * index2}>
-                      <div className="card">
+                      <div
+                        className="card mr-3"
+                        style={{ width: 300, height: 270 }}
+                      >
                         {item.isPopular && (
                           <div className="tag">
                             Popular{" "}

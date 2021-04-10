@@ -7,6 +7,8 @@ import DetailsPage from "pages/DetailsPage";
 import Checkout from "pages/Checkout";
 import Example from "pages/Example";
 import NotFound from "pages/404";
+import Header from "parts/Header";
+import Footer from "parts/Footer";
 
 import "assets/scss/style.scss";
 
@@ -15,9 +17,11 @@ const history = createBrowserHistory({
 });
 
 function App() {
+  console.log(history.location.pathname);
   return (
     <div className="App">
       <Router history={history} basename={process.env.PUBLIC_URL}>
+        <Header name={history.location.pathname}></Header>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/properties/:id" component={DetailsPage} />
@@ -25,6 +29,7 @@ function App() {
           <Route path="/example" component={Example} />
           <Route path="*" component={NotFound} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

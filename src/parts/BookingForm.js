@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-
 import propTypes from "prop-types";
-
 import Button from "elements/Button";
 import { InputNumber, InputDate } from "elements/Form";
 
@@ -79,7 +77,7 @@ class BookingForm extends Component {
 
   render() {
     const { data } = this.state;
-    const { itemDetails,startBooking } = this.props;
+    const { itemDetails, startBooking } = this.props;
 
     return (
       <div className="card bordered" style={{ padding: "60px 80px" }}>

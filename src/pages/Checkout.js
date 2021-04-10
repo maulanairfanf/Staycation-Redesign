@@ -79,7 +79,6 @@ export default class Checkout extends Component {
     };
     return (
       <>
-        <Header isCentered />
         <Stepper steps={steps}>
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
@@ -90,10 +89,6 @@ export default class Checkout extends Component {
               />
               <Meta data={steps} current={CurrentStep} />
               <MainContent data={steps} current={CurrentStep} />
-              {console.log(prevStep)}
-              {console.log(nextStep)}
-              {console.log(CurrentStep)}
-              {console.log(steps)}
 
               {CurrentStep === "bookingInformation" && (
                 <Controller>

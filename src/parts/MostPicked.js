@@ -5,18 +5,19 @@ import Fade from "react-reveal/Fade";
 export default function MostPicked(props) {
   console.log(props);
   return (
-    <section className="container" ref={props.refMostPicked}>
+    <section className="container my-5" ref={props.refMostPicked}>
       <Fade bottom>
         <h4 className="mb-3">Most Picked</h4>
-        <div className="container-grid">
+
+        <div className="d-flex flex-row overflow-auto">
           {props.data.map((item, index) => {
             return (
-              <div
-                key={`mospicked-${index}`}
-                className={`item column-4${index === 0 ? " row-2" : " row-1"}`}
-              >
+              <div key={`mospicked-${index}`}>
                 <Fade bottom delay={500 * index}>
-                  <div className="card card-featured">
+                  <div
+                    className="card card-featured mr-3"
+                    style={{ width: 300, height: 270 }}
+                  >
                     <div className="tag">
                       ${item.price}
                       <span className="font-weight-light">per {item.unit}</span>
@@ -45,7 +46,7 @@ export default function MostPicked(props) {
               </div>
             );
           })}
-        </div>{" "}
+        </div>
       </Fade>
     </section>
   );

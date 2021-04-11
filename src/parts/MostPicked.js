@@ -3,7 +3,6 @@ import Button from "elements/Button";
 import Fade from "react-reveal/Fade";
 
 export default function MostPicked(props) {
-  console.log(props);
   return (
     <section className="container my-5" ref={props.refMostPicked}>
       <Fade bottom>

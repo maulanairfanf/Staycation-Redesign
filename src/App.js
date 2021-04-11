@@ -17,7 +17,6 @@ const history = createBrowserHistory({
 });
 
 function App() {
-  console.log(history.location.pathname);
   return (
     <div className="App">
       <Router history={history} basename={process.env.PUBLIC_URL}>

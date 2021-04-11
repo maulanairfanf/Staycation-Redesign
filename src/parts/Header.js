@@ -10,7 +10,6 @@ export default function Header(props) {
     return location.pathname === path ? " active" : "";
   };
 
-  console.log(props);
 
   // if (props.name === "/properties/${item._id}") {
   //   return (

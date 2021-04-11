@@ -13,7 +13,6 @@ export default function Hero(props) {
       behavior: "smooth",
     });
   }
-  console.log(props);
   return (
     <Fade bottom>
       <section className="container pt-4 mb-5">

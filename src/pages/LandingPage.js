@@ -17,23 +17,24 @@ class LandingPage extends Component {
     window.title = "Staycation | Home";
     window.scrollTo(0, 0);
     if (!this.props.page.landingPage)
-      this.props.fetchPage(`/landing-page`, "landingPage");
+      this.props.fetchPage(`/mostPicked`, "landingPage");
   }
 
   render() {
     const { page } = this.props;
+    console.log(landingPage);
+    console.log(page);
 
     if (!page.hasOwnProperty("landingPage")) return null;
 
     return (
       <>
-        <Hero refMostPicked={this.refMostPicked} data={page.landingPage.landingPage.hero} />
+        <Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
         <MostPicked
           refMostPicked={this.refMostPicked}
-          data={page.landingPage.landingPage.mostPicked}
+          data={page.landingPage}
         />
-        <Categories data={page.landingPage.landingPage.categories} />
-        {/* <Testimony data={landingPage.testimonial} /> */}
+        <Categories data={landingPage.categories} />
       </>
     );
   }

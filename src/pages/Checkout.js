@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-
-import Header from "parts/Header";
+import { connect } from "react-redux";
 import Button from "elements/Button";
 import Stepper, {
   Numbering,
@@ -9,14 +8,12 @@ import Stepper, {
   MainContent,
   Controller,
 } from "elements/Stepper";
-
 import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
-
 import ItemDetails from "json/itemDetails.json";
 
-export default class Checkout extends Component {
+class Checkout extends Component {
   state = {
     data: {
       firstName: "",
@@ -40,12 +37,13 @@ export default class Checkout extends Component {
 
   componentDidMount() {
     window.scroll(0, 0);
+    document.title = "Staycation | Checkout";
   }
   render() {
     const { data } = this.state;
-    const checkout = {
-      duration: 3,
-    };
+    const { checkout, page } = this.props;
+    console.log(this.props.checkout);
+    console.log(checkout);
     const steps = {
       bookingInformation: {
         title: "Booking Information",
@@ -54,7 +52,7 @@ export default class Checkout extends Component {
           <BookingInformation
             data={data}
             checkout={checkout}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout.id]}
             onChange={this.onChange}
           />
         ),
@@ -65,7 +63,7 @@ export default class Checkout extends Component {
         content: (
           <Payment
             data={data}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout.id]}
             checkout={checkout}
             onChange={this.onChange}
           />
@@ -176,3 +174,10 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+  page: state.page,
+});
+
+export default connect(mapStateToProps)(Checkout);

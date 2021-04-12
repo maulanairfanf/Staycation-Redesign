@@ -4,7 +4,7 @@ import Button from "elements/Button";
 import IconText from "parts/IconText";
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mt-5">
       <div className="container">
         <div className="row">
           <div className="col-auto" style={{ width: 350 }}>

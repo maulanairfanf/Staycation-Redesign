@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 export default function Categories({ data }) {
   return data.map((category, index1) => {
     return (
-      <section className="container " key={`category-${index1}`}>
+      <section className="container mb-5" key={`category-${index1}`}>
         <Fade bottom>
           <h4 className="mb-3 font-weight-medium">{category.name}</h4>
           <div className="d-flex flex-row overflow-auto">

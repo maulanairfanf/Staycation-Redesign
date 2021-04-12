@@ -7,7 +7,7 @@ import PageDetailDescription from "parts/PageDetailDescription";
 import ItemDetails from "json/itemDetails.json";
 import BookingForm from "parts/BookingForm";
 import Categories from "parts/Categories";
-import Testimony from "parts/Testimony";
+import PreLoad from "parts/PreLoad";
 import { checkoutBooking } from "store/actions/checkout";
 import { fetchPage } from "store/actions/page";
 
@@ -28,7 +28,7 @@ class DetailsPage extends Component {
   render() {
     const { page, match } = this.props;
 
-    if (!page[match.params.id]) return null;
+    if (!page[match.params.id]) return <PreLoad />;
 
     const breadcrumb = [
       { pageTitle: "Home", pageHref: "" },
@@ -40,12 +40,12 @@ class DetailsPage extends Component {
         <FeaturedImage data={page[match.params.id].imageUrls} />
         <section className="container mb-5">
           <div className="row">
-            <div className="col-7 pr-5">
+            <div className="col-lg-7 col-12 ">
               <Fade bottom>
                 <PageDetailDescription data={page[match.params.id]} />
               </Fade>
             </div>
-            <div className="col-5">
+            <div className="col-lg-5 col-12">
               <Fade bottom>
                 <BookingForm
                   itemDetails={page[match.params.id]}

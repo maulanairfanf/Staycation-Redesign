@@ -80,7 +80,7 @@ class BookingForm extends Component {
     const { itemDetails, startBooking } = this.props;
 
     return (
-      <div className="card bordered" style={{ padding: "60px 80px" }}>
+      <div className="card bordered p-4 p-md-5 mt-4 mt-md-0">
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
           ${itemDetails.price}{" "}

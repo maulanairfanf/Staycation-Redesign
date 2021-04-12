@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
-// import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
 import Checkout from "pages/Checkout";
@@ -27,9 +27,9 @@ function App() {
           <Route path="/checkout" component={Checkout} />
           <Route path="/example" component={Example} />
           <Route path="*" component={NotFound} />
-        </Switch>
-        <Footer />
-      </Router>
+        </Switch>{" "}
+        <Footer /> <ToastContainer></ToastContainer>
+      </Router>{" "}
     </div>
   );
 }

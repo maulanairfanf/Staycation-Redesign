@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import PreLoad from "parts/PreLoad";
 import landingPage from "json/landingPage.json";
 import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
@@ -22,10 +22,13 @@ class LandingPage extends Component {
 
   render() {
     const { page } = this.props;
-    console.log(landingPage);
-    console.log(page);
 
-    if (!page.hasOwnProperty("landingPage")) return null;
+    if (!page.hasOwnProperty("landingPage"))
+      return (
+        <>
+          <PreLoad />
+        </>
+      );
 
     return (
       <>

@@ -1,17 +1,17 @@
-import React from 'react';
-import Fade from 'react-reveal/Fade';
+import React from "react";
+import Fade from "react-reveal/Fade";
 
 export default function FeaturedImage({ data }) {
   return (
     <section className="container mb-5">
-      <div className="container-grid sm">
+      <div className="d-flex flex-wrap ">
         {data.map((item, index) => {
           return (
             <div
               key={`FeaturedImage-${index}`}
-              className={`item ${index > 0 ? 'column-5' : 'column-7'} ${
-                index > 0 ? 'row-1' : 'row-2'
-              }`}
+              className={` ${
+                index > 0 ? "col-12 col-md-6 mb-4 mb-md-0" : "col-12 mb-4"
+              } `}
             >
               <Fade bottom delay={300 * index}>
                 <div className="card h-100">

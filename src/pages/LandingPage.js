@@ -5,7 +5,6 @@ import landingPage from "json/landingPage.json";
 import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
 import Categories from "parts/Categories";
-import Testimony from "parts/Testimony";
 import { fetchPage } from "store/actions/page";
 
 class LandingPage extends Component {

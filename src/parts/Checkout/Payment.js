@@ -16,8 +16,8 @@ export default function Payment(props) {
   return (
     <Fade>
       <div className="container" style={{ marginBottom: 30 }}>
-        <div className="row justify-content-center align-items-center">
-          <div className="col-5 border-right py-5" style={{ paddingRight: 80 }}>
+        <div className="row justify-content-around align-items-center">
+          <div className=" col-12 col-md-5 py-2 py-md-5">
             <Fade delay={300}>
               <p className="mb-4">Transfer Pembayaran:</p>
               <p>Tax: {tax}%</p>
@@ -49,8 +49,9 @@ export default function Payment(props) {
                 </div>
               </div>
             </Fade>
-          </div>
-          <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
+          </div>{" "}
+          <div className="verticalHR d-none d-lg-block"></div>
+          <div className=" col-12 col-md-5 py-2 py-md-5">
             <Fade delay={600}>
               <label htmlFor="proofPayment">Upload Bukti Transfer</label>
               <InputFile

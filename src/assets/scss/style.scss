@@ -248,3 +248,8 @@ main {
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
+
+.verticalHR {
+  border-right: $border-width solid $gray-300;
+  height: 400px;
+}

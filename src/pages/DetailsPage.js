@@ -10,6 +10,7 @@ import Categories from "parts/Categories";
 import PreLoad from "parts/PreLoad";
 import { checkoutBooking } from "store/actions/checkout";
 import { fetchPage } from "store/actions/page";
+import NotFound from "pages/404";
 
 class DetailsPage extends Component {
   componentDidMount() {
@@ -18,7 +19,7 @@ class DetailsPage extends Component {
     if (!this.props.page[this.props.match.params.id])
       this.props
         .fetchPage(
-          `/itemDetails/${this.props.match.params.id}`,
+          `/mostPicked/${this.props.match.params.id}`,
           this.props.match.params.id
         )
         .then((response) => {
@@ -28,7 +29,14 @@ class DetailsPage extends Component {
   render() {
     const { page, match } = this.props;
 
-    if (!page[match.params.id]) return <PreLoad />;
+    if (!page[match.params.id]) {
+      return <PreLoad />;
+    }
+    if (!page[match.params.id].data) {
+      return (
+        <NotFound title="Maaf data belum tersedia" titleButton="Back to home" />
+      );
+    }
 
     const breadcrumb = [
       { pageTitle: "Home", pageHref: "" },

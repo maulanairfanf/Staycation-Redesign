@@ -12,7 +12,7 @@ import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 import ItemDetails from "json/itemDetails.json";
-
+import NotFound from "pages/404";
 class Checkout extends Component {
   state = {
     data: {
@@ -42,8 +42,8 @@ class Checkout extends Component {
   render() {
     const { data } = this.state;
     const { checkout, page } = this.props;
-    console.log(this.props.checkout);
-    console.log(checkout);
+    if (!checkout)
+      return <NotFound title="Pilih kamar terlebih dahulu" titleButton="Back" />;
     const steps = {
       bookingInformation: {
         title: "Booking Information",

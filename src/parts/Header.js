@@ -10,7 +10,6 @@ export default function Header(props) {
     return location.pathname === path ? " active" : "";
   };
 
-
   // if (props.name === "/properties/${item._id}") {
   //   return (
   //     <Fade>
@@ -27,7 +26,7 @@ export default function Header(props) {
 
   return (
     <Fade>
-      <header className="spacing-sm">
+      <header className="spacing-sm mb-md-5 mb-2">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
             <BrandIcon />

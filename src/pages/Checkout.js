@@ -81,6 +81,7 @@ class Checkout extends Component {
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
               <Numbering
+                className="mt-5"
                 data={steps}
                 current={CurrentStep}
                 style={{ marginBottom: 50 }}

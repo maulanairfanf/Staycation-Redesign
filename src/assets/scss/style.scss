@@ -61,6 +61,7 @@ header {
   border-bottom: 1px solid $gray-200;
   width: 100%;
   position: relative;
+  z-index: 100;
 
   .navbar {
     height: 80px;

@@ -5,8 +5,7 @@ function errorResponseHandler(error) {
   if (error) {
     let message;
     if (error.response) {
-      if (error.response.status === 500) message = "Something went wrong";
-      else if (error.response.status === 404) message = "Something wrong";
+      if (!error.response.data.message) message = "Something went wrong";
       else message = error.response.data.message;
 
       toast.error(message, {

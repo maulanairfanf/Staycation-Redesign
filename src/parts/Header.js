@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 
 export default function Header(props) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const location = useLocation();
   const getNavLinkClass = (path) => {
     return location.pathname === path ? " active" : "";
@@ -25,19 +25,17 @@ export default function Header(props) {
   //   );
   // }
   const showNavbar = () => {
-    if (show === false) {
-      setShow(true);
-      console.log(show);
-    } else {
+    if (show) {
       setShow(false);
-      console.log(show);
+    } else {
+      setShow(true);
     }
   };
 
   return (
     <Fade>
-      <header className="spacing-sm mb-md-5 mb-2">
-        <div className="container-md relative">
+      <header className="spacing-sm mb-md-5 mb-2 py-3">
+        <div className=" relative container p-0 p-0">
           <nav className="navbar navbar-expand-lg d-flex justify-content-between">
             <BrandIcon />
             <Button
@@ -67,8 +65,18 @@ export default function Header(props) {
               </svg>
             </Button>
 
-            <div className="d-none d-md-block">
-              <ul className="navbar-nav  bg-white ">
+            <div
+              className={[
+                "d-none d-md-block transitions ",
+                show ? "d-none " : "d-block col-12 col-md-auto p-0",
+              ].join("")}
+            >
+              <ul
+                className={[
+                  "navbar-nav bg-white  ",
+                  show ? "" : "d-flex flex-column flex-md-row",
+                ].join("")}
+              >
                 <li className={`nav-item${getNavLinkClass("/")}`}>
                   <Button className="nav-link " type="link" href="/">
                     Home

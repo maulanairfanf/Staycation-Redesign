@@ -34,7 +34,7 @@ export default function Header(props) {
 
   return (
     <Fade>
-      <header className="spacing-sm mb-md-5 mb-2 py-3">
+    <header className="spacing-sm mb-md-5 mb-2 py-3">
         <div className=" relative container p-0 p-0">
           <nav className="navbar navbar-expand-lg d-flex justify-content-between">
             <BrandIcon />

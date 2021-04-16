@@ -15,10 +15,7 @@ export default function Hero(props) {
     <Fade bottom>
       <section className="container pt-4 mb-5">
         <div className="row align-items-center d-block d-lg-none">
-          <div
-            className="col-auto order-2 order-lg-1 h-full"
-            style={{ width: 530 }}
-          >
+          <div className="col-auto order-2 order-lg-1 h-full">
             <h3 className="font-weight-bold line-height-1 mb-3">
               Forget Busy Work, <br />
               Start Next Vacation
@@ -26,23 +23,20 @@ export default function Hero(props) {
           </div>
         </div>
         <div className="row align-items-center ">
-          <div
-            className="col-auto order-2 order-lg-1 h-full d-flex flex-wrap flex-column  "
-            style={{ width: 530 }}
-          >
+          <div className="col-12 col-lg-6 order-2 order-lg-1 h-full d-flex flex-wrap flex-column  ">
             <h1 className="font-weight-bold line-height-1 mb-3 d-none d-lg-block">
               Forget Busy Work, <br />
               Start Next Vacation
             </h1>
             <p
-              className="mb-4 font-weight-light text-gray-500  text-lg-left text-center col-md-9 col-12 px-0"
+              className="mb-4 font-weight-light text-gray-500  text-lg-left text-center col-lg-9 col-12 px-0"
               style={{ lineHeight: "170%" }}
             >
               We provide what you need to enjoy your holiday with family. Time
               to make another memorable moments.
             </p>
             <Button
-              className="btn px-5 mx-auto mx-md-0 mr-md-auto "
+              className="btn px-5 mx-auto mx-lg-0 mr-lg-auto "
               hasShadow
               isPrimary
               onClick={showMostPicked}
@@ -78,7 +72,7 @@ export default function Hero(props) {
                   </span>
                 </h6>
               </div>
-              <div className="col-auto text-center mt-3 mt-md-0">
+              <div className="col-auto text-center mt-3 mt-lg-0">
                 <img
                   width="36"
                   height="36"

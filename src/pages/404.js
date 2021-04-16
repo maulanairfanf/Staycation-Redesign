@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import Button from "elements/Button";
 
 function NotFound(props) {
-  console.log(props);
   return (
     <div className="container">
       <div
@@ -19,12 +18,7 @@ function NotFound(props) {
               : "Some page are still in development, maybe you can go back if youwant "}
           </p>
           <div>
-            <Button
-              className="btn mt-5"
-              type="button"
-              onClick={() => props.history.goBack()}
-              isLight
-            >
+            <Button className="btn mt-5" type="link" href="/" isLight>
               {props.titleButton
                 ? props.titleButton
                 : "  Yes, bring me to safe place please"}

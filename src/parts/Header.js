@@ -34,12 +34,12 @@ export default function Header(props) {
 
   return (
     <Fade>
-    <header className="spacing-sm mb-md-5 mb-2 py-3">
-        <div className=" relative container p-0 p-0">
+      <header className="spacing-sm mb-md-5 mb-2 py-3">
+        <div className=" relative container p-0">
           <nav className="navbar navbar-expand-lg d-flex justify-content-between">
             <BrandIcon />
             <Button
-              className="nav-link bg-transparent nav-link border-0 d-flex d-md-none outline-none "
+              className="nav-link bg-transparent nav-link border-0 d-flex d-md-none outline-none p-0"
               type="button"
               onClick={showNavbar}
             >

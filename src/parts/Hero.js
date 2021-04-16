@@ -88,11 +88,11 @@ export default function Hero(props) {
               </div>
             </div>
           </div>
-          <div className="col-12 col-lg-6 order-1  d-flex justify-content-center order-lg-2 mb-lg-0 mb-4">
+          <div className="col-12 col-lg-6 order-1 d-flex justify-content-center order-lg-2 mb-lg-0 mb-4">
             <img
               src={ImageHero}
               alt="Room with couches"
-              className="img-fluid rounded"
+              className="img-fluid w-100 h-100 rounded"
             />
           </div>
         </div>

@@ -43,7 +43,9 @@ class Checkout extends Component {
     const { data } = this.state;
     const { checkout, page } = this.props;
     if (!checkout)
-      return <NotFound title="Pilih kamar terlebih dahulu" titleButton="Back" />;
+      return (
+        <NotFound title="Pilih kamar terlebih dahulu" titleButton="Back" />
+      );
     const steps = {
       bookingInformation: {
         title: "Booking Information",
@@ -114,7 +116,7 @@ class Checkout extends Component {
                     type="link"
                     isBlock
                     isLight
-                    href={`/properties/${ItemDetails._id}`}
+                    href={`/properties/${checkout.id}`}
                   >
                     Cancel
                   </Button>
